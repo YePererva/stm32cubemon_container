@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=STMicroelectronics STM32CubeMonitor {{version}}
+Comment=STM32CubeMonitor helps debug and diagnose STM32 applications while they are running by reading and displaying their variables in real-time.
+GenericName=STM32CubeMonitor
+Exec=stm32cubemon %F
+Terminal=false
+Version={{version}}
+Type=Application
+Icon=stm32cubemonitor
+Categories=Development;Electronics;STMicroelectronics;

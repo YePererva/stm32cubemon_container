@@ -1,0 +1,28 @@
+FROM ubuntu:22.04
+
+ENV TZ=Etc/UTC
+
+COPY "{{driver_path}}" .
+COPY "{{cubemon_path}}" .
+
+RUN apt update && apt clean && \ 
+    apt install -y \
+        build-essential \
+        wget \
+        curl \
+        libncurses5 \ 
+        openjdk-8-jdk
+
+RUN echo "A" | apt -y -f install ."./"$(basename "{{cubemon_path}}")""
+ENV LICENSE_ALREADY_ACCEPTED=1
+
+RUN apt -y -f install "./"$(basename "{{driver_path}}")""
+
+RUN rm -f "./"$(basename "{{driver_path}}")""
+RUN rm -f "./"$(basename "{{cubemon_path}}")""
+
+RUN mkdir /work
+
+WORKDIR /work
+
+CMD ["/usr/bin/stm32cubemonitor", "--no-sandbox"]
