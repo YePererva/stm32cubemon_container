@@ -40,9 +40,12 @@ cp "$template_file" "$menu_entry_filename"
 sed -i "s|{{version}}|${version//\\/\\\\}|g" "$menu_entry_filename"
 sed -i "s|{{system_launcher}}|${system_launcher//\\/\\\\}|g" "$menu_entry_filename"
 
+desktop-file-validate "$menu_entry_filename"
 
-update-desktop-database "$menu_entry_filename" -v
-chmod 644 "$menu_entry_filename"
+update-desktop-database "$menu_entry_dir"
+
+chown root:root /usr/share/applications/st-stm32cubemon.desktop
+chmod 644 /usr/share/applications/st-stm32cubemon.desktop
 
 kbuildsycoca5 --noincremental
 kbuildsycoca6 --noincremental
