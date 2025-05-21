@@ -32,7 +32,7 @@ cd stm32cubemon_container
 
 sh 00._install.sh # intentionally no sudo here!
 sudo sh 01._create_system_link.sh
-sudo sh 02.create_menu_entry.sh
+sudo sh 02._create_menu_entry.sh
 ```
 
 ## Running STM32CubeMonitor
@@ -49,7 +49,13 @@ to run in specific folder.
 
 ## Spotted issues / Remarks
 
-- For some reason, Fedora 42 with KDE Plasma is not always adding the shortcut to menu. But it can be found in Applications. Still looking for solution.
+- For some reason, Fedora 42:
+    - with KDE Plasma is not always adding the shortcut to menu. But it can be found in Applications.
+    - with cinnamon DE raises error: KMS: DRM_IOCTL_MODE_CREATE_DUMB failed: Permission denied
+        - Presumable solution is to add "WEBKIT_DISABLE_DMABUF_RENDERER=1" to the end of /etc/profile
+
+Still looking for solution.
+
 - If need to delete created container (per-say to intall the newer one):
 
 ```bash

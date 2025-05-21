@@ -10,7 +10,8 @@ RUN apt update && apt clean && \
         build-essential \
         wget \
         curl \
-        libncurses5 \ 
+        libncurses5 \
+        libwebkit2gtk-4.0-37 \
         openjdk-8-jdk
 
 RUN echo "A" | apt -y -f install ."./"$(basename "{{cubemon_path}}")""
