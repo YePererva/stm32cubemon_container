@@ -50,11 +50,7 @@ to run in specific folder.
 ## Spotted issues / Remarks
 
 - For some reason, Fedora 42:
-    - with KDE Plasma is not always adding the shortcut to menu. But it can be found in Applications.
-    - with cinnamon DE raises error: KMS: DRM_IOCTL_MODE_CREATE_DUMB failed: Permission denied
-        - Presumable solution is to add "WEBKIT_DISABLE_DMABUF_RENDERER=1" to the end of /etc/profile
-
-Still looking for solution.
+    - with KDE Plasma is not always adding the shortcut to menu. But it can be found in Applications. Still looking for solution.
 
 - If need to delete created container (per-say to intall the newer one):
 
